@@ -4,6 +4,11 @@
   "description": "A command-line tool for taking transparent screenshots of web pages using Playwright",
   "author": "coldino",
   "license": "MIT",
+  "repository": "github:coldino/browser-snapper",
+  "homepage": "https://github.com/coldino/browser-snapper#readme",
+  "bugs": {
+    "url": "https://github.com/coldino/browser-snapper/issues"
+  },
   "main": "main.ts",
   "type": "module",
   "module": "main.ts",
