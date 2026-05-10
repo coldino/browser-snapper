@@ -1,20 +1,10 @@
 #!/usr/bin/env node
 /**
- * cdp-shot.ts
+ * Uses Playwright to capture a screenshot of a webpage with options for
+ * transparent background, viewport size, zoom, and lossy compression.
+ * The output can be PNG or WebP.
  *
- * Run with: npx tsx cdp-shot.ts [options] <url> <output>
- *
- * Options:
- *   -t, --transparent         Make background transparent
- *   -s, --size WIDTHxHEIGHT   Viewport size, e.g. 1280x720
- *   -l, --lossy-quality N     Lossy quality for webp (0-100). Ignored for PNG.
- *   -w, --wait N              Wait N seconds after load event before snapshotting
- *       --devtools HOST:PORT  DevTools host and port (default localhost:9222)
- *   -h, --help                Show help
- *
- * Dependencies:
- *   npm i chrome-remote-interface sharp
- *   sharp is optional if you only write .png
+ * Run with: npx @coldino/browser-snapper [options] <url> <output>
  */
 
 import { chromium } from "playwright";
@@ -36,20 +26,20 @@ type Parsed = {
 
 function showUsageAndExit(code = 0): never {
   console.log(`
-Usage: browser-shot [options] <url> <output>
+Usage: browser-snapper [options] <url> <output>
 
 Options:
   -t, --transparent         Make background transparent
   -s, --size WIDTHxHEIGHT   Viewport size, e.g. 1280x800
   -l, --lossy-quality N     Quality for lossy compression (0-100) [lossless by default]
-  -w, --wait N              Wait N seconds after load event before snapshotting
+  -w, --wait N              Wait N seconds after load event before screenshotting
   -z, --zoom N              Page zoom factor (e.g. 2 for 200%)
   -c, --css CSS             Remove background from the specified CSS selector(s) (e.g. ".main" or "main,#screen")
   -h, --help                Show this help
 
 Examples:
-  browser-shot -t -s 1280x720 https://example.com out.png
-  browser-shot -w 10 -s 375x812 https://example.com phone.webp -l 80
+  browser-snapper -t -s 1280x720 https://example.com out.png
+  browser-snapper -w 10 -s 375x812 https://example.com phone.webp -l 80
 `);
   process.exit(code);
 }
