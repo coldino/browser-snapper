@@ -1,0 +1,30 @@
+{
+  "name": "@coldino/browser-snapper",
+  "version": "1.0.0",
+  "description": "A command-line tool for taking transparent screenshots of web pages using Playwright",
+  "author": "coldino",
+  "license": "MIT",
+  "main": "main.ts",
+  "type": "module",
+  "module": "main.ts",
+  "bin": {
+    "browser-snapper": "./main.ts"
+  },
+  "scripts": {
+    "start": "node main.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/chrome-remote-interface": "^0.33.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "sharp": "^0.34.5"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
