@@ -9,21 +9,21 @@
   "bugs": {
     "url": "https://github.com/coldino/browser-snapper/issues"
   },
-  "main": "main.ts",
+  "main": "./main.js",
   "type": "module",
-  "module": "main.ts",
   "bin": {
-    "browser-snapper": "./main.ts"
+    "browser-snapper": "./main.js"
   },
+  "files": [
+    "main.js",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "start": "node main.ts"
+    "start": "node main.js"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "@types/chrome-remote-interface": "^0.33.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+    "@types/node": "latest"
   },
   "dependencies": {
     "playwright": "^1.59.1",
